@@ -14,6 +14,7 @@
     "pug": "^2.0.0-rc.2",
     "raphael": "^2.2.7",
     "svg-pan-zoom": "^3.5.1",
-    "svg.js": "^2.6.2"
+    "svg.js": "^2.6.2",
+    "xml-beautifier": "^0.3.0"
   }
 }
