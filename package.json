@@ -1,0 +1,19 @@
+{
+  "name": "nrpgmap",
+  "version": "1.0.0",
+  "description": "A map for NRPG",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Zee1234",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "less": "^2.7.2",
+    "pug": "^2.0.0-rc.2",
+    "raphael": "^2.2.7",
+    "svg-pan-zoom": "^3.5.1",
+    "svg.js": "^2.6.2"
+  }
+}

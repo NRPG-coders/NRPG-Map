@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+  head
+    style(type='text/css')!= css
+    script(type='text/javascript', src='/js/svg-pan-zoom.min.js')
+    script(type='text/javascript', src='/js/definefactions.js')
+    script(type='text/javascript', src='/js/definezones.js')
+    script(type='text/javascript', src='/js/svg.js')
+  body
+    object(type='image/svg+xml', data='/pic/map.svg')
+    div#ThePicture!= svg
+    script(type='text/javascript', src='/js/initializesvg.js')
+    div#information
+      span#hover
+      br
+      span#click

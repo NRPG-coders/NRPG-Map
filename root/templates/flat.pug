@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head
+    style(type='text/css')!= css
+    script(type='text/javascript')!= svgpanzoom
+    script(type='text/javascript')!= definefactions
+    script(type='text/javascript')!= definezones
+    script(type='text/javascript')!= svgjs
+  body
+    div#ThePicture!= svg
+    script(type='text/javascript')!= initializesvg
+    div#information
+      span#hover
+      br
+      span#click
