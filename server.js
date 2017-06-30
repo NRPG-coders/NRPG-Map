@@ -2,6 +2,7 @@ const express = require('express')
 const less = require('less')
 const pug = require('pug')
 const fs = require('fs')
+const base64 = require('node-base64-image')
 
 const port = 3000
 
@@ -10,46 +11,21 @@ let html = {}
 let css = {}
 let js = {}
 
-let svg
-//Load svg
-/*fs.readFile(__dirname+'/root/gfx/map.svg',"utf8",function(err,data) {
-  if(err) { throw err; }
-  svg = data
-})
-
-//Load HTML text into objects
-function loadHTML(path,name) {
-  fs.readFile(__dirname+path,"utf8",function(err,data) {
-    console.log('hi;')
-    if(err) { throw err; }
-    html[name] = pug.render(data, {})
-    console.log(html[name])
-  })
-}
-
-
-//Load CSS text into objects
-function loadCSS(path,name) {
-  fs.readFile(__dirname+path,"utf8",function(err,data) {
-    if(err) { throw err; }
-    less.render(data, function(err,out) {
-      if(err) { throw err; }
-      css[name] = out
-    })
-  })
-}
-
-//Load JS text into objects
-function loadJS(path,name) {
-  fs.readFile(__dirname+path,"utf8",function(err,data) {
-    if(err) { throw err; }
-    js[name] = data
-  })
-}*/
-svg = fs.readFileSync(__dirname+'/root/gfx/map.svg',"utf8")
 function loadHTML(path,name) {
   html[name] = pug.compile(fs.readFileSync(__dirname+path,"utf8"))
 }
+//Load SVG into memory as text
+let svg = fs.readFileSync(__dirname+'/root/gfx/map.svg',"utf8")
+//Load texture overlay into the svg as base64 encoded text
+let texture
+base64.encode(__dirname+'/root/gfx/texture.png',{
+  string: true,
+  local: true
+}, function(err,ret) {
+  if(err) { throw err; }
+  texture = 'data:image/png;base64,'+ret
+})
+
 function loadCSS(path,name) {
   less.render(fs.readFileSync(__dirname+path,"utf8"), function(err,out) {
     if(err) { throw err; }
@@ -96,7 +72,8 @@ serve('/pic/map.svg',svg)
 //Serve HTML
 serveHTML('/test.html',html.test,{
   svg: svg,
-  css: css.test.css
+  css: css.test.css,
+  dataurl: texture
 })
 serveHTML('/flat.html',html.flat,{
   svg: svg,
@@ -105,7 +82,8 @@ serveHTML('/flat.html',html.flat,{
   definezones: js.definezones,
   svgjs: js.svgjs,
   initializesvg: js.initializesvg,
-  css: css.test.css
+  css: css.test.css,
+  dataurl: texture
 })
 
 //Serve CSS

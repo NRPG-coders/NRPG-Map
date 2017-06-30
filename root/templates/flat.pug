@@ -7,9 +7,11 @@ html(lang='en')
     script(type='text/javascript')!= definezones
     script(type='text/javascript')!= svgjs
   body
-    div#ThePicture!= svg
-    script(type='text/javascript')!= initializesvg
-    div#information
-      span#hover
-      br
-      span#click
+    div#container
+      div#ThePicture!= svg
+      script(type='text/javascript')!= initializesvg
+      img#texture(width='3000', height='2005', transform='translate(-93.11 -261.363) scale(1.341)', src=dataurl)
+      div#information
+        span#hover
+        br
+        span#click
