@@ -145,8 +145,8 @@ function clickhandler() {
     delayedMouseover(info,info.id) //The mouseover event ceases execution early if the element is selected, so we retrigger it here.
     untriggerExpandedInfo()
   } else {
-    customresetcaller()
     selectedZone = info.id
+    customresetcaller()
     selectZone(info.id)
   }
 }
