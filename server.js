@@ -40,7 +40,7 @@ loadHTML('/root/templates/flat.pug','flat')
 
 loadCSS('/root/styles/test.less','test')
 
-loadJS('/node_modules/raphael/raphael.min.js','raphael')
+//loadJS('/node_modules/raphael/raphael.min.js','raphael')
 loadJS('/node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','svgpanzoom')
 loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
 loadJS('/root/scripts/define_factions.js','definefactions')
