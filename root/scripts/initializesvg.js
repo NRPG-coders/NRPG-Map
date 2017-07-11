@@ -150,6 +150,12 @@ function clickhandler() {
     selectZone(info.id)
   }
 }
+//Handles touch events
+function ontouchstarthandler() {
+  let info = getInfo(this.id())
+  info.e.fire('mouseover')
+  info.e.fire('click')
+}
 
 
 
@@ -172,6 +178,7 @@ function adopt() {
     SVGelement.mouseout(mouseouthandler)
     SVGelement.click(clickhandler)
     SVGelement.on('customreset',customresethandler)
+    SVGelement.on('touchstart',ontouchstarthandler)
     SVGelement.fire('customreset')
   })
 }
