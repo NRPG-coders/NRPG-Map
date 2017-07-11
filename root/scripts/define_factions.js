@@ -1,4 +1,4 @@
-window.Factions = {
+var Factions = {
   'Konohagakure': {
     name: 'Konohagakure',                 //Faction Name (SAME AS OWNER ID INSIDE ZoneDetails)
     capital: 'Konohagakure',              //Faction Capital (do we want this? If so, should these be zones or should they be cities?)
@@ -27,4 +27,10 @@ window.Factions = {
     blurb: 'Shorter description.',
     detail: 'Still short description.'
   }
+}
+
+if (window) {
+  window.Factions = Factions
+} else {
+  module.exports = Factions
 }

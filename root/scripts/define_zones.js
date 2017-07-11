@@ -1,4 +1,4 @@
-window.ZoneDetails = {
+var ZoneDetails = {
   'WindZone01': {
     name: 'The Grand Desert',                        //Zone name
     blurb: 'A fucking huge desert.',                 //Short details
@@ -17,4 +17,10 @@ window.ZoneDetails = {
     detail: 'Much longer text.',
     owner: 'Wind Daimyou'
   },
+}
+
+if (window) {
+  window.ZoneDetails = ZoneDetails
+} else {
+  module.exports = ZoneDetails
 }
