@@ -20,7 +20,7 @@ var ZoneDetails = {
 }
 
 if (typeof window !== 'undefined') {
-  window.Factions = ZoneDetails
+  window.ZoneDetails = ZoneDetails
 } else {
   module.exports = ZoneDetails
 }
