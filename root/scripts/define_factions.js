@@ -29,7 +29,7 @@ var Factions = {
   }
 }
 
-if (window) {
+if (typeof window !== 'undefined') {
   window.Factions = Factions
 } else {
   module.exports = Factions
