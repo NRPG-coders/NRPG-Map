@@ -12,10 +12,10 @@
     "babel-core": "^6.25.0",
     "babel-preset-es2015": "^6.24.1",
     "express": "^4.15.3",
-    "less": "^2.7.2",
     "node-base64-image": "^1.0.3",
     "pug": "^2.0.0-rc.2",
     "raphael": "^2.2.7",
+    "stylus": "^0.54.5",
     "svg-pan-zoom": "^3.5.1",
     "svg.js": "^2.6.2",
     "xml-beautifier": "^0.3.0"

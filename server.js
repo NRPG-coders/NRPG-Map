@@ -1,9 +1,9 @@
 const express = require('express')
-const less = require('less')
 const pug = require('pug')
 const fs = require('fs')
 const base64 = require('node-base64-image')
 const babel = require('babel-core')
+const stylus = require('stylus')
 
 const port = 3000
 
@@ -27,26 +27,30 @@ base64.encode(__dirname+'/root/gfx/texture.png',{
   texture = 'data:image/png;base64,'+ret
 })
 
+//Load CSS into memory as text
 function loadCSS(path,name) {
-  less.render(fs.readFileSync(__dirname+path,"utf8"), function(err,out) {
-    if(err) { throw err; }
-    css[name] = out
-  })
+  stylus(fs.readFileSync(__dirname+path,'utf8'))
+    .render(function(err,out) {
+      if (err) { throw err; }
+      css[name] = out
+    })
 }
+//Load javascript into memory as text
+function loadJS(path,name) {
+  js[name] = fs.readFileSync(__dirname+path,"utf8")
+}
+//Transforms a string of javascript into using babel-preset-es2015
 function babelize(str) {
   return babel.transform(str, {
     presets: ['es2015'],
     comments: false,
   })
 }
-function loadJS(path,name) {
-  js[name] = fs.readFileSync(__dirname+path,"utf8")
-}
 
 loadHTML('/root/templates/test.pug','test')
 loadHTML('/root/templates/flat.pug','flat')
 
-loadCSS('/root/styles/test.less','test')
+loadCSS('/root/styles/test.styl','test')
 
 loadJS('/node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','svgpanzoom')
 loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
@@ -57,7 +61,7 @@ js.definefactions = babelize(js.definefactions).code
 js.definezones = babelize(js.definezones).code
 js.initializesvg = babelize(js.initializesvg).code
 
-
+while (!css.test) {}
 const app = express()
 
 function serve(path,resp) {
@@ -83,7 +87,7 @@ serve('/pic/map.svg',svg)
 //Serve HTML
 serveHTML('/test.html',html.test,{
   svg: svg,
-  css: css.test.css,
+  css: css.test,
   dataurl: texture
 })
 serveHTML('/flat.html',html.flat,{
@@ -93,12 +97,12 @@ serveHTML('/flat.html',html.flat,{
   definezones: js.definezones,
   svgjs: js.svgjs,
   initializesvg: js.initializesvg,
-  css: css.test.css,
+  css: css.test,
   dataurl: texture
 })
 
 //Serve CSS
-serveCSS('/css/test.css',css.test.css)
+serveCSS('/css/test.css',css.test)
 
 //Serve JS
 serve('/js/raphael.min.js',js.raphael)
