@@ -3,6 +3,7 @@ const less = require('less')
 const pug = require('pug')
 const fs = require('fs')
 const base64 = require('node-base64-image')
+const babel = require('babel-core')
 
 const port = 3000
 
@@ -32,20 +33,30 @@ function loadCSS(path,name) {
     css[name] = out
   })
 }
+function babelize(str) {
+  return babel.transform(str, {
+    presets: ['es2015'],
+    comments: false,
+  })
+}
 function loadJS(path,name) {
   js[name] = fs.readFileSync(__dirname+path,"utf8")
 }
+
 loadHTML('/root/templates/test.pug','test')
 loadHTML('/root/templates/flat.pug','flat')
 
 loadCSS('/root/styles/test.less','test')
 
-//loadJS('/node_modules/raphael/raphael.min.js','raphael')
 loadJS('/node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','svgpanzoom')
 loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
 loadJS('/root/scripts/define_factions.js','definefactions')
 loadJS('/root/scripts/define_zones.js','definezones')
 loadJS('/root/scripts/initializesvg.js','initializesvg')
+js.definefactions = babelize(js.definefactions).code
+js.definezones = babelize(js.definezones).code
+js.initializesvg = babelize(js.initializesvg).code
+
 
 const app = express()
 
