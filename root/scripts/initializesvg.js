@@ -177,8 +177,20 @@ function adopt() {
 }
 
 addload(adopt)
-/* //waiting until I figure out how to better implement this
 addload(function() {
-  svgPanZoom('#The_Best_Map_Ever')
+  window.map = svgPanZoom('#The_Best_Map_Ever', {
+    panEnabled: true,
+    controlIconsEnabled: true,
+    zoomEnabled: true,
+    dblClickZoomEnabled: true,
+    mouseWheelZoomEnabled: true,
+    preventMouseEventsDefault: true,
+    zoomScaleSensitivity: 0.5,
+    minZoom: 1,
+    maxZoom: 10,
+    fit: true,
+    contain: false,
+    center: true,
+    refreshRate: 'auto',
+  })
 })
-*/
