@@ -56,10 +56,10 @@ loadJS('/node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','svgpanzoom')
 loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
 loadJS('/root/scripts/define_factions.js','definefactions')
 loadJS('/root/scripts/define_zones.js','definezones')
-loadJS('/root/scripts/initializesvg.js','initializesvg')
+loadJS('/root/scripts/initializesvgold.js','initializesvgold')
 js.definefactions = babelize(js.definefactions).code
 js.definezones = babelize(js.definezones).code
-js.initializesvg = babelize(js.initializesvg).code
+js.initializesvgold = babelize(js.initializesvgold).code
 
 while (!css.test) {}
 const app = express()
@@ -96,7 +96,7 @@ serveHTML('/flat.html',html.flat,{
   definefactions: js.definefactions,
   definezones: js.definezones,
   svgjs: js.svgjs,
-  initializesvg: js.initializesvg,
+  initializesvg: js.initializesvgold,
   css: css.test,
   dataurl: texture
 })
@@ -110,7 +110,7 @@ serve('/js/svg-pan-zoom.min.js',js.svgpanzoom)
 serve('/js/svg.js',js.svgjs)
 serve('/js/definefactions.js',js.definefactions)
 serve('/js/definezones.js',js.definezones)
-serve('/js/initializesvg.js',js.initializesvg)
+serve('/js/initializesvg.js',js.initializesvgold)
 
 
 app.listen(port,function() {
