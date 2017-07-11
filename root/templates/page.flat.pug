@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    style(type='text/css')!= css
+    script(type='text/javascript')!= "window.addload=function(func){if(window.addEventListener){window.addEventListener('load', func)}else{window.attachEvent('onload', func)}}"
+    script(type='text/javascript')!= svgpanzoom
+    script(type='text/javascript')!= svgjs
+    script(type='text/javascript')!= definefactions
+    script(type='text/javascript')!= definezones
+  body
+    div#container
+      div#map
+        != svg
+        div#legend
+          each val,key in factions
+            div.hidden(id='legend'+key)
+              div.legendColor(style='background-color:'+val.color+';')
+              span.legendTitle(style='color:'+val.color+';')= val.name
+      script(type='text/javascript')!= initializesvg
+      div#information
+        div#blurb
+          
+        div#long
+      
+      div#hover 
+      div#click
