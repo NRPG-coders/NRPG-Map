@@ -4,12 +4,24 @@ user-select()
   -webkit-user-select arguments
   -ms-user-select arguments
 
+svgRegionWidth = 700px
+
+/*
 .hidden
   display none
-
+//*/
 #container
-  relative top left
+  position relative
+  top 0px
+  left 0px
+  width svgRegionWidth
+  height svgRegionWidth*(2160/3840)
 #map
   user-select none
-  width 700px
-  height 420px
+  width inherit
+  height inherit
+#legend
+  user-select auto
+  position absolute
+  bottom 0px
+  left 0px

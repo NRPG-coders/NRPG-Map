@@ -2,7 +2,7 @@ var Factions = {
   'Konohagakure': {
     name: 'Konohagakure',                 //Faction Name (SAME AS OWNER ID INSIDE ZoneDetails)
     capital: 'Konohagakure',              //Faction Capital (do we want this? If so, should these be zones or should they be cities?)
-    color: '#ffaabb',                     //Faction color
+    color: '#bbffaa',                     //Faction color
     blurb: 'Short description here.',     //Short description
     detail: 'Lengthy description here.'   //Long Description
   },
@@ -23,9 +23,16 @@ var Factions = {
   'Hoshigakure': {
     name: 'Hoshigakure',
     capital: 'Hoshi',
-    color: '#bbffaa',
+    color: '#ffaabb',
     blurb: 'Shorter description.',
     detail: 'Still short description.'
+  },
+  '': {
+    name: 'blank',
+    capital: 'video games',
+    color: '#cccccc',
+    blurb: 'They are the dynamic duo.',
+    detail: 'There exists no game they cannot beat.'
   }
 }
 

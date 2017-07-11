@@ -30,6 +30,7 @@ function loadCSS(path,name) {
   stylus(fs.readFileSync(__dirname+path,'utf8'))
     .use(nib())
     .include('nib')
+    .include('nib/position')
     .render(function(err,out) {
       if (err) { throw err; }
       css[name] = out
@@ -56,7 +57,6 @@ loadCSS('/root/styles/page.styl','page')
 
 loadJS('/node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','svgpanzoom')
 loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
-loadJS('/node_modules/hyperscript/index.js','hyperscript')
 loadJS('/root/scripts/define_factions.js','definefactions')
 loadJS('/root/scripts/define_zones.js','definezones')
 loadJS('/root/scripts/initializesvg.js','initializesvg')
@@ -68,35 +68,40 @@ loadJS('/root/scripts/initializesvg.js','initializesvg')
 while (!css.page) {}
 
 
-
+function invertColor(hex,bw) {
+  function zeroPadding(str,len) {
+    len = len || 2
+    return (new Array(len).join('0') + str).slice(-len)
+  }
+  if (hex.indexOf('#') === 0) {
+    hex = hex.slice(1)
+  }
+  if (hex.length === 3) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
+  }
+  if (hex.length !== 6) {
+    throw new Error('Invalid HEX color.')
+  }
+  let r = parseInt(hex.slice(0, 2), 16),
+      g = parseInt(hex.slice(2, 4), 16),
+      b = parseInt(hex.slice(4, 6), 16)
+  if (bw) {
+      // http://stackoverflow.com/a/3943023/112731
+    return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+      ? '#000000'
+      : '#FFFFFF'
+  }
+  // invert color components
+  r = (255 - r).toString(16)
+  g = (255 - g).toString(16)
+  b = (255 - b).toString(16)
+  // pad each with zeros and return
+  return "#" + zeroPadding(r) + zeroPadding(g) + zeroPadding(b)
+}
 
 
 const app = express()
-
-function serve(path,resp) {
-  app.get(path,function(req,res) {
-    res.send(resp)
-  })
-}
-function serveHTML(path,resp,locals) {
-  app.get(path,function(req,res) {
-    res.send(resp(locals))
-  })
-}
-
-//Serve HTML
-serveHTML('/test.html',html.testpage,{
-  svg: svg.map,
-  hyperscript: js.hyperscript,
-  svgpanzoom: js.svgpanzoom,
-  svgjs: js.svgjs,
-  definefactions: js.definefactions,
-  definezones: js.definezones,
-  css: css.page,
-  factions: factions,
-  zones: zones,
-})
-serveHTML('/flat.html',html.flat,{
+const locals = {
   svg: svg.map,
   hyperscript: js.hyperscript,
   svgpanzoom: js.svgpanzoom,
@@ -107,11 +112,33 @@ serveHTML('/flat.html',html.flat,{
   css: css.page,
   factions: factions,
   zones: zones,
-})
+  invertColor: invertColor,
+}
+
+
+function serve(path,resp) {
+  app.get(path,function(req,res) {
+    res.send(resp)
+  })
+}
+function serveHTML(path,resp) {
+  app.get(path,function(req,res) {
+    res.send(resp(locals))
+  })
+}
+
+//Serve HTML
+serveHTML('/test.html',html.testpage)
+serveHTML('/flat.html',html.flat)
 
 serve('/js/initializesvg.js',js.initializesvg)
 
 
 app.listen(port,function() {
   console.log(`App running on ${port}`)
+})
+
+fs.writeFile(__dirname+'/out.flat.html',html.flat(locals),'utf8',function(err) {
+  if (err) { throw err; }
+  console.log('out.flat.html has been updated!')
 })

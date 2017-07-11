@@ -13,14 +13,40 @@ html(lang='en')
         != svg
         div#legend
           each val,key in factions
-            div.hidden(id='legend'+key)
+            div.hidden(id='llegend'+key)
               div.legendColor(style='background-color:'+val.color+';')
               span.legendTitle(style='color:'+val.color+';')= val.name
       script(type='text/javascript')!= initializesvg
       div#information
         div#blurb
-          
+          each val,key in zones
+            - var color = factions[val.owner].color || '#fff'
+            - var bw = invertColor(color,true)
+            - var inverse = invertColor(color)
+            div.hidden(id='blurb'+key style='background-color:'+color+';')
+              span.blurbTitle(style='color:'+inverse+';') Name: 
+              span.blurbText(style='color:'+bw+';')= val.name
+              br/
+              span.blurbTitle(style='color:'+inverse+';') Owner: 
+              span.blurbText(style='color:'+bw+';')= val.owner
+              br/
+              span.blurbTitle(style='color:'+inverse+';') Information: 
+              span.blurbText(style='color:'+bw+';')= val.blurb
+              br/
         div#long
-      
-      div#hover 
+          each val,key in zones
+            - var color = factions[val.owner].color || '#fff'
+            - var bw = invertColor(color,true)
+            - var inverse = invertColor(color)
+            div.hidden(id='long'+key style='background-color:'+color+';')
+              span.longTitle(style='color:'+inverse+';') Name: 
+              span.longText(style='color:'+bw+';')= val.name
+              br/
+              span.longTitle(style='color:'+inverse+';') Owner: 
+              span.longText(style='color:'+bw+';')= val.owner
+              br/
+              span.longTitle(style='color:'+inverse+';') Information: 
+              span.longText(style='color:'+bw+';')= val.blurb
+              br/
       div#click
+      div#hover
