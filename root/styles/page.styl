@@ -1,3 +1,5 @@
+@import "nib"
+
 user-select()
   user-select arguments
   -moz-user-select arguments
@@ -11,9 +13,10 @@ svgRegionWidth = 700px
   display none
 //*/
 #container
-  position relative
-  top 0px
-  left 0px
+  //position relative
+  //top 0px
+  //left 0px
+  relative top left
   width svgRegionWidth
   height svgRegionWidth*(2160/3840)
 #map

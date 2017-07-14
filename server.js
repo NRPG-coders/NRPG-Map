@@ -7,6 +7,8 @@ const stylus = require('stylus')
 const factions = require(__dirname+'/root/scripts/define_factions.js')
 const zones = require(__dirname+'/root/scripts/define_zones.js')
 const nib = require('nib')
+const pd = require('pretty-data').pd
+const uglifyjs = require('uglify-js').minify
 
 const port = 3000
 
@@ -22,18 +24,16 @@ function loadHTML(path,name) {
 }
 //Load SVG into memory as text
 function loadSVG(path,name) {
-  svg[name] = fs.readFileSync(__dirname+path,"utf8")
+  svg[name] = pd.xmlmin(fs.readFileSync(__dirname+path,"utf8"))
 }
 
 //Load CSS into memory as text
 function loadCSS(path,name) {
   stylus(fs.readFileSync(__dirname+path,'utf8'))
     .use(nib())
-    .include('nib')
-    .include('nib/position')
     .render(function(err,out) {
       if (err) { throw err; }
-      css[name] = out
+      css[name] = pd.cssmin(out)
     })
 }
 //Load javascript into memory as text
@@ -60,9 +60,9 @@ loadJS('/node_modules/svg.js/dist/svg.min.js','svgjs')
 loadJS('/root/scripts/define_factions.js','definefactions')
 loadJS('/root/scripts/define_zones.js','definezones')
 loadJS('/root/scripts/initializesvg.js','initializesvg')
-//js.definefactions = babelize(js.definefactions).code
-//js.definezones = babelize(js.definezones).code
-//js.initializesvg = babelize(js.initializesvg).code
+js.definefactionsbabel = babelize(js.definefactions).code
+js.definezonesbabel = babelize(js.definezones).code
+js.initializesvgbabel = babelize(js.initializesvg).code
 
 // Wait for CSS to load
 while (!css.page) {}
@@ -103,16 +103,12 @@ function invertColor(hex,bw) {
 const app = express()
 const locals = {
   svg: svg.map,
-  hyperscript: js.hyperscript,
-  svgpanzoom: js.svgpanzoom,
-  svgjs: js.svgjs,
-  definefactions: js.definefactions,
-  definezones: js.definezones,
-  initializesvg: js.initializesvg,
   css: css.page,
   factions: factions,
   zones: zones,
   invertColor: invertColor,
+  svgpanzoom: js.svgpanzoom,
+  svgjs: js.svgjs,
 }
 
 
@@ -123,7 +119,11 @@ function serve(path,resp) {
 }
 function serveHTML(path,resp) {
   app.get(path,function(req,res) {
-    res.send(resp(locals))
+    res.send(resp(Object.assign({}, locals, {
+      definefactions: js.definefactions,
+      definezones: js.definezones,
+      initializesvg: js.initializesvg,
+    })))
   })
 }
 
@@ -138,7 +138,11 @@ app.listen(port,function() {
   console.log(`App running on ${port}`)
 })
 
-fs.writeFile(__dirname+'/out.flat.html',html.flat(locals),'utf8',function(err) {
+fs.writeFile(__dirname+'/out.flat.html',html.flat(Object.assign({}, locals, {
+  definefactions: uglifyjs(js.definefactionsbabel).code,
+  definezones: uglifyjs(js.definezonesbabel).code,
+  initializesvg: uglifyjs(js.initializesvgbabel).code,
+})),'utf8',function(err) {
   if (err) { throw err; }
   console.log('out.flat.html has been updated!')
 })

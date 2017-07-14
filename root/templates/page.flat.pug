@@ -18,6 +18,8 @@ html(lang='en')
               span.legendTitle(style='color:'+val.color+';')= val.name
       script(type='text/javascript')!= initializesvg
       div#information
+        div#click
+        div#hover
         div#blurb
           each val,key in zones
             - var color = factions[val.owner].color || '#fff'
@@ -48,5 +50,3 @@ html(lang='en')
               span.longTitle(style='color:'+inverse+';') Information: 
               span.longText(style='color:'+bw+';')= val.blurb
               br/
-      div#click
-      div#hover

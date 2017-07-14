@@ -14,11 +14,13 @@
     "express": "^4.15.3",
     "nib": "^1.1.2",
     "node-base64-image": "^1.0.3",
+    "pretty-data": "^0.40.0",
     "pug": "^2.0.0-rc.2",
     "raphael": "^2.2.7",
     "stylus": "^0.54.5",
     "svg-pan-zoom": "^3.5.1",
     "svg.js": "^2.6.2",
+    "uglify-js": "^3.0.24",
     "xml-beautifier": "^0.3.0"
   }
 }
