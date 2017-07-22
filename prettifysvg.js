@@ -1,8 +1,9 @@
 const beautify = require('xml-beautifier')
 const fs = require('fs')
-
-const srcpath = '/root/gfx/plainmap05.svg'
-const outpath = '/root/gfx/plainmap05.pretty.svg'
+const args = process.argv.slice(2)
+console.log(args)
+const srcpath = args&&args[0]||'/root/gfx/plainmap05.svg'
+const outpath = args&&args[1]||'/root/gfx/plainmap05.pretty.svg'
 
 let src = fs.readFileSync(__dirname+srcpath,"utf8")
 console.log(typeof(src),src.length||0)
