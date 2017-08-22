@@ -9,6 +9,7 @@ html(lang='en')
     script(type='text/javascript')!= definezones
   body
     div#container
+      div.bar
       div#map
         != svg
         div#legend
@@ -17,15 +18,16 @@ html(lang='en')
               div.legendColor(style='background-color:'+val.color+';')
               span.legendTitle(style='color:'+val.color+';')= val.name
       script(type='text/javascript')!= initializesvg
-      div#information
-        div#click
-        div#hover
-        div#blurb
-          each val,key in zones
-            - var color = factions[val.owner].color || '#fff'
-            - var bw = invertColor(color,true)
-            - var inverse = invertColor(color)
-            div.hidden.blurb(id='blurb'+key style='background-color:'+color+';')
+      div#click
+      div#hover
+      div#blurb
+        each val,key in zones
+          - var color = factions[val.owner].color || '#fff'
+          - var bw = invertColor(color,true)
+          - var inverse = invertColor(color)
+          div.blurbContainer.hidden(id='blurb'+key)
+            div.bar
+            div.blurb(style='background-color:'+color+';')
               span.blurbTitle(style='color:'+inverse+';') Name: 
               span.blurbText(style='color:'+bw+';')= val.name
               br/
@@ -35,12 +37,14 @@ html(lang='en')
               span.blurbTitle(style='color:'+inverse+';') Information: 
               span.blurbText(style='color:'+bw+';')= val.blurb
               br/
-        div#long
-          each val,key in zones
-            - var color = factions[val.owner].color || '#fff'
-            - var bw = invertColor(color,true)
-            - var inverse = invertColor(color)
-            div.hidden.long(id='long'+key style='background-color:'+color+';')
+      div#long
+        each val,key in zones
+          - var color = factions[val.owner].color || '#fff'
+          - var bw = invertColor(color,true)
+          - var inverse = invertColor(color)
+          div.longContainer.hidden(id='long'+key)
+            div.bar
+            div.long(style='background-color:'+color+';')
               span.longTitle(style='color:'+inverse+';') Name: 
               span.longText(style='color:'+bw+';')= val.name
               br/

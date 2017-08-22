@@ -8,22 +8,64 @@ user-select()
 
 svgRegionWidth = 700px
 
+*
+  margin 0
+  padding 0
+
+body
+  background-color black
+
 .hidden
   display none
+
+
 #container
   relative top left
-  width svgRegionWidth
-  height svgRegionWidth*(2160/3840)
+  width 100vw
+
+  @media only screen and (min-width: 1080px)
+    position absolute 
+    left calc(50% - 540px)
+    top 0px
+    width 1080px
+  
 #map
   user-select none
-  width inherit
-  height inherit
+  width 96vw
+  height 96vw*(2160/3840)
+
+  @media only screen and (min-width: 1080px)
+    width 780px
+    height 780px*(2160/3840)
+
 #legend
   user-select auto
   position absolute
   bottom 0px
   left 0px
+
+#blurb 
+  relative top left
+  margin-top 1em
+  box-sizing border-box
+
+  @media only screen and (min-width: 1080px)
+    absolute left 780px top 30px
+    width 250px
+    margin-left 25px
 .blurb
-  width 100px
+  padding 1em
+
+#long 
+  relative top left
+  margin-top 1em
+  box-sizing border-box
 .long
-  margin 10px
+  padding 1em
+
+.bar
+  background-image url('http://i.imgur.com/w9DgkGS.png')
+  border-radius 6px
+  width calc(100% + 12px)
+  relative top left -6px
+  height 25px
