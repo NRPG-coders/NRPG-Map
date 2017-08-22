@@ -120,9 +120,9 @@ function serve(path,resp) {
 function serveHTML(path,resp) {
   app.get(path,function(req,res) {
     res.send(resp(Object.assign({}, locals, {
-      definefactions: js.definefactions,
-      definezones: js.definezones,
-      initializesvg: js.initializesvg,
+      definefactions: uglifyjs(js.definefactionsbabel).code,
+      definezones: uglifyjs(js.definezonesbabel).code,
+      initializesvg: uglifyjs(js.initializesvgbabel).code,
     })))
   })
 }
