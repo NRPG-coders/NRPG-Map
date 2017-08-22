@@ -26,18 +26,25 @@ let selectedZone;
 //Activates the information blurb group corresponding to the given zone ID
 function triggerInfo(id) {
   document.getElementById('hover').innerHTML = 'Hovered zone id: '+id
+  document.getElementById('blurb'+id).classList.remove('hidden')
+
 }
 //Activates the full information group corresponding to the given zone ID
 function triggerExpandedInfo(id) {
   document.getElementById('click').innerHTML = 'Clicked zone id: '+id
+  document.getElementById('long'+id).classList.remove('hidden')
 }
 //Turns off all information blurb group
 function untriggerInfo() {
-
+  Array.from(document.getElementById('blurb').children).forEach( (node) => {
+    node.classList.add('hidden')
+  })
 }
 //Turns off all full information groups
 function untriggerExpandedInfo() {
-
+  Array.from(document.getElementById('long').children).forEach( (node) => {
+    node.classList.add('hidden')
+  })
 }
 
 

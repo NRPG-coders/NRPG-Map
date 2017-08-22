@@ -25,7 +25,7 @@ html(lang='en')
             - var color = factions[val.owner].color || '#fff'
             - var bw = invertColor(color,true)
             - var inverse = invertColor(color)
-            div.hidden(id='blurb'+key style='background-color:'+color+';')
+            div.hidden.blurb(id='blurb'+key style='background-color:'+color+';')
               span.blurbTitle(style='color:'+inverse+';') Name: 
               span.blurbText(style='color:'+bw+';')= val.name
               br/
@@ -40,7 +40,7 @@ html(lang='en')
             - var color = factions[val.owner].color || '#fff'
             - var bw = invertColor(color,true)
             - var inverse = invertColor(color)
-            div.hidden(id='long'+key style='background-color:'+color+';')
+            div.hidden.long(id='long'+key style='background-color:'+color+';')
               span.longTitle(style='color:'+inverse+';') Name: 
               span.longText(style='color:'+bw+';')= val.name
               br/
