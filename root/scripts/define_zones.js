@@ -30,7 +30,7 @@ var ZoneDetails = {
      "owner":"Kirigakure Ruins"
   },
   "IslandZone01":{
-     "name":"",
+     "name":"New Kirigakure",
      "blurb":"",
      "detail":"",
      "owner":"Island Country"
