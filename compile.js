@@ -48,7 +48,7 @@ loadJS('/src/javascript/define_factions.js','definefactions')
 loadJS('/src/javascript/define_zones.js','definezones')
 loadJS('/src/javascript/initializesvg.js','initializesvg')
 loadJS('/src/javascript/invertcolor.js','invertcolor')
-
+loadJS('/src/javascript/loadsvg.js','loadsvg')
 // Wait for CSS to load
 while (!css.page) {}
 
@@ -82,4 +82,5 @@ writejs('factions.js', js.definefactions)
 writejs('zones.js', js.definezones)
 writejs('initializesvg.js', js.initializesvg)
 writejs('invertcolor.js', js.invertcolor)
+writejs('loadsvg.js', js.loadsvg)
 //*/
