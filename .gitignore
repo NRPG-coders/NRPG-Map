@@ -60,3 +60,5 @@ typings/
 
 #html flatfile outputs
 out.flat.html
+
+.clone/*
