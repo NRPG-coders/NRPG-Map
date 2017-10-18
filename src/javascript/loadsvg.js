@@ -9,5 +9,5 @@ oReq.addEventListener('load', res => {
     throw err;
   }
 })
-oReq.open('GET', 'something.github.io/NRPG-Map/dist/gfx/map.svg')
+oReq.open('GET', 'https://nrpg-coders.github.io/NRPG-Map/gfx/map.svg')
 oReq.send()
