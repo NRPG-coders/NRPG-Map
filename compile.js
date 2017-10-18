@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const base64 = require('node-base64-image')
 const babel = require('babel-core')
+const pug = require('pug')
 const stylus = require('stylus')
 const nib = require('nib')
 const pd = require('pretty-data').pd
@@ -8,10 +9,15 @@ const uglifyjs = require('uglify-js').minify
 const path = require('path')
 
 //Storage objects for css, js, and svg text
+let html = {}
 let css = {}
 let js = {}
 let svg = {}
 
+//Load HTML into memory as text
+function loadHTML(path,name) {
+  html[name] = pug.compile(fs.readFileSync(__dirname+path,"utf8"))
+}
 //Load SVG into memory as text
 function loadSVG(path,name) {
   svg[name] = pd.xmlmin(fs.readFileSync(__dirname+path,"utf8"))
@@ -39,6 +45,8 @@ function loadJS(path,name) {
 
 
 loadSVG('/src/pictures/map.svg','map')
+
+loadHTML('/src/pug/page.pug','page')
 
 loadCSS('/src/stylus/page.styl','page')
 
@@ -77,6 +85,7 @@ let writejs = (name, contents) => { write('js', name, contents) }
 
 write('css', 'main.css', css.page)
 write('gfx', 'map.svg', svg.map)
+write('html', 'page.html', html.page({}))
 writejs('factions.js', js.definefactions)
 writejs('zones.js', js.definezones)
 writejs('initializesvg.js', js.initializesvg)
