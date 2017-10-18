@@ -8,7 +8,8 @@
     "url": "https://github.com/NRPG-coders/NRPG-Map"
   },
   "scripts": {
-    "compile": "node compile.js",
+    "compile": "node compile.js prod",
+    "compile-dev": "node compile.js dev",
     "test": "node spec/test.js"
   },
   "author": "Zee1234",

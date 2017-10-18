@@ -14,6 +14,11 @@ let css = {}
 let js = {}
 let svg = {}
 
+// Generate file paths based on dev/prod
+function url(dir) {
+  return process.argv[2] === 'dev' ? '..'+dir : 'https://nrpg-coders.github.io/NRPG-Map'+dir
+}
+
 //Load HTML into memory as text
 function loadHTML(path,name) {
   html[name] = pug.compile(fs.readFileSync(__dirname+path,"utf8"))
@@ -85,7 +90,7 @@ let writejs = (name, contents) => { write('js', name, contents) }
 
 write('css', 'main.css', css.page)
 write('gfx', 'map.svg', svg.map)
-write('html', 'page.html', html.page({svg: svg.map}))
+write('html', 'page.html', html.page({svg: svg.map, url: url}))
 writejs('factions.js', js.definefactions)
 writejs('zones.js', js.definezones)
 writejs('initializesvg.js', js.initializesvg)

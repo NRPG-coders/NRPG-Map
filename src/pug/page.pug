@@ -1,18 +1,18 @@
 doctype html
 html(lang='en')
   head
-    link(rel='stylesheet', type='text/css', href='https://nrpg-coders.github.io/NRPG-Map/css/main.css')
+    link(rel='stylesheet', type='text/css', href=url('/css/main.css'))
     script(type='text/javascript')!= "window.addload=function(func){if(window.addEventListener){window.addEventListener('load', func)}else{window.attachEvent('onload', func)}}"
-    script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/invertcolor.js')
-    script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/svg-pan-zoom.js')
-    script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/svg.js')
-    script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/factions.js')
-    script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/zones.js')
+    script(type='text/javascript', src=url('/js/invertcolor.js'))
+    script(type='text/javascript', src=url('/js/svg-pan-zoom.js'))
+    script(type='text/javascript', src=url('/js/svg.js'))
+    script(type='text/javascript', src=url('/js/factions.js'))
+    script(type='text/javascript', src=url('/js/zones.js'))
   body
     div#container
       div.bar
       div#map!= svg
-      script(type='text/javascript', src='https://nrpg-coders.github.io/NRPG-Map/js/initializesvg.js')
+      script(type='text/javascript', src=url('/js/initializesvg.js'))
       div#click
       div#hover
       div#blurb
