@@ -43,8 +43,8 @@ var Factions = {
     blurb: 'Shortish description here.',
     detail: 'Longish description here.'
   },
-  'Island Country': {
-    name: 'Island Country',
+  'New Kirigakure': {
+    name: 'New Kirigakure',
     capital: '',
     color: '#185cb7',
     blurb: 'Shortish description here.',
