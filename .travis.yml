@@ -2,11 +2,18 @@ language: node_js
 node_js:
 - stable
 sudo: false
-
 env:
   global:
-  - ENCRYPTION_LABEL: "39348aa2b9a6"
-  - COMMIT_AUTHOR_EMAIL: "zeeatgit@gmail.com"
-
+  #- ENCRYPTION_LABEL: 39348aa2b9a6
+  - COMMIT_AUTHOR_EMAIL: zeeatgit@gmail.com
+before_install:
+  - openssl aes-256-cbc -K $encrypted_39348aa2b9a6_key -iv $encrypted_39348aa2b9a6_iv
+    -in deploy_key.enc -out deploy_key -d
+  - chmod 600 deploy_key
+  - eval `ssh-agent -s`
+  - ssh-add deploy_key
 script:
+  - npm run compile
+
+after_success:
   - bash ./deploy.sh
