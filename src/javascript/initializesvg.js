@@ -1,4 +1,4 @@
-
+let geid = document.getElementById
 
 
 
@@ -25,23 +25,38 @@ let selectedZone;
 
 //Activates the information blurb group corresponding to the given zone ID
 function triggerInfo(id) {
-  document.getElementById('hover').innerHTML = 'Hovered zone id: '+id
-  //document.getElementById('blurb'+id).classList.remove('hidden')
+  geid('hover')?geid('hover').innerHTML = 'Hovered zone id: '+id:true
+
+  let info = getInfo(id)
+  let details = info.details
+  let faction = Factions[details.owner]
+  geid('blurbName').innerHTML = details.name
+  geid('blurbOwner').innerHTML = details.owner
+  geid('blurbZoneBlurb').innerHTML = details.blurb
+  geid('blurbFactionBlurb').innerHTML = faction ? faction.blurb : '-'
 }
 //Activates the full information group corresponding to the given zone ID
 function triggerExpandedInfo(id) {
-  document.getElementById('click').innerHTML = 'Clicked zone id: '+id
-  //document.getElementById('long'+id).classList.remove('hidden')
+  geid('click')?geid('click').innerHTML = 'Clicked zone id: '+id:true
+
+  let info = getInfo(id)
+  let details = info.details
+  let faction = Factions[details.owner]
+  geid('longName').innerHTML = details.name
+  geid('longOwner').innerHTML = details.owner
+  geid('longZoneLong').innerHTML = details.long
+  geid('longFactionLong').innerHTML = faction ? faction.long : '-'
+
 }
 //Turns off all information blurb group
 function untriggerInfo() {
-  /*Array.from(document.getElementById('blurb').children).forEach( (node) => {
+  /*Array.from(geid('blurb').children).forEach( (node) => {
     node.classList.add('hidden')
   })*/
 }
 //Turns off all full information groups
 function untriggerExpandedInfo() {
-  /*Array.from(document.getElementById('long').children).forEach( (node) => {
+  /*Array.from(geid('long').children).forEach( (node) => {
     node.classList.add('hidden')
   })*/
 }
@@ -51,10 +66,10 @@ function untriggerExpandedInfo() {
 
 //Set a zone as 'active' (clicked)
 function selectZone(id) {
-  let info = zones[zoneReference[id]]
+  let info = getInfo(id)
   let color = '#fff'
   if(info.g) {
-    for(let poly of document.getElementById(id).childNodes) {
+    for(let poly of geid(id).childNodes) {
       if(!poly.tagName) { continue; }
       poly.style.fill = color
     }
@@ -69,7 +84,7 @@ function hoverZone(id) {
   let info = zones[zoneReference[id]]
   let color = '#ddd'
   if(info.g) {
-    for(let poly of document.getElementById(id).childNodes) {
+    for(let poly of geid(id).childNodes) {
       if(!poly.tagName) { continue; }
       poly.style.fill = color
     }
@@ -93,7 +108,7 @@ function customresethandler() {
     var color = defaultColor
   }
   if(info.g) {
-    for(let poly of document.getElementById(info.id).childNodes) {
+    for(let poly of geid(info.id).childNodes) {
       if(!poly.tagName) { continue; }
       poly.style.fill = color
     }
@@ -132,7 +147,7 @@ function mouseoverhandler() {
 //Only required if you desire to 'move the mouse off a zone' without 'unhovering' it, which is the current implementation
 function mouseouthandler() {
   if(selectedZone) { return; }
-  let info = zones[zoneReference[this.id()]]
+  let info = getInfo(this.id())
   info.mouseout = true
 }
 //Handles the clicking of elements
@@ -159,15 +174,36 @@ function ontouchstarthandler() {
 
 
 function adopt() {
-  for(let element of document.getElementById('The_Ninja_World').childNodes) {
+  for(let element of geid('The_Ninja_World').childNodes) {
     if(!element.tagName) { continue; }
     if(!element.id) { throw 'Element lacks id!'; }
+    let details = ZoneDetails[element.id]
     zoneReference[element.id] = zones.length
+    let background = (
+      Factions[details.owner] &&
+      Factions[details.owner].color ||
+      '#000000'
+    )
+    let text = (
+      Factions[details.owner] &&
+      Factions[details.owner].textOverride ||
+      invertColor(background)
+    )
+    let bw = (
+      Factions[details.owner] &&
+      Factions[details.owner].invertOverride ||
+      Factions[details.owner].textOverride &&
+      invertColor(invertColor(text), true) ||
+      invertColor(background, true)
+    )
     zones.push({
       g: element.tagName.toLowerCase() === 'g',
       e: SVG.adopt(element),
       id: element.id,
-      details: ZoneDetails[element.id],
+      details: details,
+      background: background,
+      text: text,
+      bw: bw,
       mouseout: false
     })
   }
