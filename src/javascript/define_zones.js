@@ -81,7 +81,7 @@ var ZoneDetails = {
      "name":"BearZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Bear Country"
   },
   "RainZone01":{
      "name":"RainZone01",
@@ -213,13 +213,13 @@ var ZoneDetails = {
      "name":"WaterfallZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Waterfall Country"
   },
   "WaterfallZone02":{
      "name":"WaterfallZone02",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Waterfall Country"
   },
   "GrassZone01":{
      "name":"GrassZone01",
@@ -273,13 +273,13 @@ var ZoneDetails = {
      "name":"ForestZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Forest Country"
   },
   "ForestZone02":{
      "name":"ForestZone02",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Forest Country"
   },
   "ShadowZone01":{
      "name":"ShadowZone01",
@@ -291,7 +291,7 @@ var ZoneDetails = {
      "name":"SwampZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Swamp Country"
   },
   "TornadoZone01":{
      "name":"TornadoZone01",
@@ -303,13 +303,13 @@ var ZoneDetails = {
      "name":"BirdZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Bird Country"
   },
   "StoneZone01":{
      "name":"StoneZone01",
      "blurb":"",
      "detail":"",
-     "owner":""
+     "owner":"Stone Country"
   },
   "IronZone01":{
      "name":"IronZone01",
