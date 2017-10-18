@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const base64 = require('node-base64-image')
 const babel = require('babel-core')
 const stylus = require('stylus')
@@ -60,7 +60,8 @@ function write(folder, name, contents) {
 let writejs = (name, contents) => { write('js', name, contents) }
 
 
-(function(root) {
+// Clear old contents of ./dist
+;(function(root) {
   fs.readdirSync(root).forEach( name => {
     let sub = path.join(root, name)
     if (fs.statSync(sub).isDirectory()) {
@@ -73,7 +74,7 @@ let writejs = (name, contents) => { write('js', name, contents) }
   })
 })('./dist')
 
-//*
+
 write('css', 'main.css', css.page)
 write('gfx', 'map.svg', svg.map)
 writejs('factions.js', js.definefactions)
@@ -83,4 +84,20 @@ writejs('invertcolor.js', js.invertcolor)
 writejs('loadsvg.js', js.loadsvg)
 writejs('svg.js', fs.readFileSync('./node_modules/svg.js/dist/svg.min.js','utf8'))
 writejs('svg-pan-zoom.js', fs.readFileSync('./node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','utf8'))
-//*/
+
+
+
+
+// Move things to .clone
+;(function(root) {
+  fs.readdirSync(root).forEach( name => {
+    let sub = path.join(root, name)
+    if (fs.statSync(sub).isDirectory()) {
+      fs.readdirSync(sub).forEach( file => {
+        if (file !== '.gitignore') {
+          fs.copySync(path.join(sub, file),path.join('out',name,file))
+        }
+      })
+    }
+  })
+})('./dist')

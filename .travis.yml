@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- stable
+sudo: false
+
+env:
+  global:
+  - ENCRYPTION_LABEL: "39348aa2b9a6"
+  - COMMIT_AUTHOR_EMAIL: "zeeatgit@gmail.com"
+
+script:
+  - ./deploy.sh

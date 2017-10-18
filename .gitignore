@@ -65,3 +65,6 @@ out.flat.html
 
 # YOU NO SEE IT
 id_rsa
+
+# Hide your docs
+out/*
