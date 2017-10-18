@@ -40,7 +40,7 @@ function triggerInfo(id) {
   ;([...document.getElementsByClassName('blurbText')]).forEach( el => {
     el.style.color = info.bw
   })
-  geid('blurbContent').style.backgroundColor = info.backgorund
+  geid('blurbContent').style.backgroundColor = info.background
 
   geid('blurbName').innerHTML = details.name
   geid('blurbOwner').innerHTML = details.owner
@@ -64,7 +64,7 @@ function triggerExpandedInfo(id) {
   ;([...document.getElementsByClassName('longText')]).forEach( el => {
     el.style.color = info.bw
   })
-  geid('longContent').style.backgroundColor = info.backgorund
+  geid('longContent').style.backgroundColor = info.background
 
   geid('longName').innerHTML = details.name
   geid('longOwner').innerHTML = details.owner
