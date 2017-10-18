@@ -31,13 +31,13 @@ function triggerInfo(id) {
   let details = info.details
   let faction = Factions[details.owner]
 
-  ([...document.getElementsByClassName('blurbTitle')]).forEach( el => {
+  ;([...document.getElementsByClassName('blurbTitle')]).forEach( el => {
     el.style.color = info.text
   })
-  ([...document.getElementsByClassName('blurbSubtitle')]).forEach( el => {
+  ;([...document.getElementsByClassName('blurbSubtitle')]).forEach( el => {
     el.style.color = info.text
   })
-  ([...document.getElementsByClassName('blurbText')]).forEach( el => {
+  ;([...document.getElementsByClassName('blurbText')]).forEach( el => {
     el.style.color = info.bw
   })
   geid('blurbContent').style.backgroundColor = info.backgorund
@@ -55,13 +55,13 @@ function triggerExpandedInfo(id) {
   let details = info.details
   let faction = Factions[details.owner]
 
-  ([...document.getElementsByClassName('longTitle')]).forEach( el => {
+  ;([...document.getElementsByClassName('longTitle')]).forEach( el => {
     el.style.color = info.text
   })
-  ([...document.getElementsByClassName('longSubtitle')]).forEach( el => {
+  ;([...document.getElementsByClassName('longSubtitle')]).forEach( el => {
     el.style.color = info.text
   })
-  ([...document.getElementsByClassName('longText')]).forEach( el => {
+  ;([...document.getElementsByClassName('longText')]).forEach( el => {
     el.style.color = info.bw
   })
   geid('longContent').style.backgroundColor = info.backgorund
