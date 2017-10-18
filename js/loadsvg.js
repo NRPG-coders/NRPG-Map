@@ -1,1 +1,0 @@
-"use strict";var mapholder=document.getElementById("map"),oReq=new XMLHttpRequest;oReq.addEventListener("load",function(e){try{mapholder.innerHTML=e.target.responseText}catch(e){throw mapholder.innerHTML="An error has been encountered, or you are experiencing connectivity issues.",e}}),oReq.open("GET","https://nrpg-coders.github.io/NRPG-Map/gfx/map.svg"),oReq.send();
