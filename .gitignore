@@ -65,6 +65,8 @@ out.flat.html
 
 # YOU NO SEE IT
 id_rsa
+deploy_key
+deploy_key.pub
 
 # Hide your docs
 out/*
