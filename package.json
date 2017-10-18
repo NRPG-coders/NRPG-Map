@@ -2,9 +2,14 @@
   "name": "nrpgmap",
   "version": "1.0.0",
   "description": "A map for NRPG",
-  "main": "server.js",
+  "main": "compile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NRPG-coders/NRPG-Map"
+  },
   "scripts": {
-    "test": "node server.js"
+    "compile": "node server.js",
+    "test": "node spec/test.js"
   },
   "author": "Zee1234",
   "license": "MIT",
