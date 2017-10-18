@@ -1,4 +1,4 @@
-let geid = document.getElementById
+let geid = document.getElementById.bind(document)
 
 
 
