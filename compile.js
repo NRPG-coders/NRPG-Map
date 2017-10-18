@@ -81,4 +81,6 @@ writejs('zones.js', js.definezones)
 writejs('initializesvg.js', js.initializesvg)
 writejs('invertcolor.js', js.invertcolor)
 writejs('loadsvg.js', js.loadsvg)
+writejs('svg.js', fs.readFileSync('./node_modules/svg.js/dist/svg.min.js','utf8'))
+writejs('svg-pan-zoom.js', fs.readFileSync('./node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','utf8'))
 //*/
