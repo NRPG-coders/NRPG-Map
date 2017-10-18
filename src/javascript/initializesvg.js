@@ -30,6 +30,18 @@ function triggerInfo(id) {
   let info = getInfo(id)
   let details = info.details
   let faction = Factions[details.owner]
+
+  new Array(document.getElementsByClassName('blurbTitle')).forEach( el => {
+    el.style.color = info.text
+  })
+  new Array(document.getElementsByClassName('blurbSubtitle')).forEach( el => {
+    el.style.color = info.text
+  })
+  new Array(document.getElementsByClassName('blurbText')).forEach( el => {
+    el.style.color = info.bw
+  })
+  geid('blurbContent').style.backgroundColor = info.backgorund
+
   geid('blurbName').innerHTML = details.name
   geid('blurbOwner').innerHTML = details.owner
   geid('blurbZoneBlurb').innerHTML = details.blurb
@@ -42,6 +54,18 @@ function triggerExpandedInfo(id) {
   let info = getInfo(id)
   let details = info.details
   let faction = Factions[details.owner]
+
+  new Array(document.getElementsByClassName('longTitle')).forEach( el => {
+    el.style.color = info.text
+  })
+  new Array(document.getElementsByClassName('longSubtitle')).forEach( el => {
+    el.style.color = info.text
+  })
+  new Array(document.getElementsByClassName('longText')).forEach( el => {
+    el.style.color = info.bw
+  })
+  geid('longContent').style.backgroundColor = info.backgorund
+
   geid('longName').innerHTML = details.name
   geid('longOwner').innerHTML = details.owner
   geid('longZoneLong').innerHTML = details.long
