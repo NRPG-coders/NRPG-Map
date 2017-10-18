@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    style(type='text/css')!= css
+    script(type='text/javascript')!= "window.addload=function(func){if(window.addEventListener){window.addEventListener('load', func)}else{window.attachEvent('onload', func)}}"
+    script(type='text/javascript')!= svgpanzoom
+    script(type='text/javascript')!= svgjs
+    script(type='text/javascript')!= definefactions
+    script(type='text/javascript')!= definezones
+  body
+    div#container
+      div.bar
+      div#map
+      script(type='text/javascript', src='')!= loadsvg
+      script(type='text/javascript')!= initializesvg
+      div#click
+      div#hover
+      div#blurb
+        div.bar
+        div.blurb
+            span.blurbTitle Name: 
+            span.blurbText
+            br/
+            span.blurbTitle Owner: 
+            span.blurbText
+            br/
+            span.blurbTitle Information: 
+            span.blurbText
+            br/
+      div#long
+        div.bar
+        div.long
+          span.longTitle Name: 
+          span.longText
+          br/
+          span.longTitle Owner: 
+          span.longText
+          br/
+          span.longTitle Information: 
+          span.longText
+          br/

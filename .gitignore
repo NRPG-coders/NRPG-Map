@@ -60,3 +60,11 @@ typings/
 
 #html flatfile outputs
 out.flat.html
+
+.clone/*
+
+# YOU NO SEE IT
+id_rsa
+
+# Hide your docs
+out/*
