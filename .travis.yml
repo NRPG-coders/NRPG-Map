@@ -9,4 +9,4 @@ env:
   - COMMIT_AUTHOR_EMAIL: "zeeatgit@gmail.com"
 
 script:
-  - ./deploy.sh
+  - bash ./deploy.sh
