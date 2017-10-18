@@ -1,423 +1,423 @@
 var ZoneDetails = {
   "ClawZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Claw Country"
+     "name":"ClawZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Claw Country"
   },
   "ClawZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Claw Country"
+     "name":"ClawZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Claw Country"
   },
   "ClawZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Claw Country"
+     "name":"ClawZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Claw Country"
   },
   "FangZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fang Country"
+     "name":"FangZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fang Country"
   },
-  "KiriRuinsZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Kirigakure Ruins"
+  "KiriRuinsZone01":{
+     "name":"KiriRuinsZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Kirigakure Ruins"
   },
   "IslandZone01":{
-    "name":"New Kirigakure",
-    "blurb":"",
-    "detail":"",
-    "owner":"Island Country"
+     "name":"Eastern Isles",
+     "blurb":"Wendigos run wild here",
+     "detail":"Savage jungle islands barely touched by mankind",
+     "owner":"New Kirigakure"
   },
   "IslandZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Island Country"
+     "name":"The Swirling Mist",
+     "blurb":"Surrounded by the Storm Circle",
+     "detail":"The former Shimagakure and it's surrounding islands are in this zone",
+     "owner":"New Kirigakure"
   },
   "VolcanoZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Volcano Country"
+     "name":"VolcanoZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Volcano Country"
   },
   "LightningZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
+     "name":"LightningZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Lightning Country"
   },
   "LightningZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
+     "name":"LightningZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Lightning Country"
   },
   "LightningZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
+     "name":"LightningZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Lightning Country"
   },
   "LightningZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
+     "name":"LightningZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Lightning Country"
   },
   "LightningZone06":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
+     "name":"LightningZone06",
+     "blurb":"",
+     "detail":"",
+     "owner":"Lightning Country"
   },
   "BearZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Bear Country"
+     "name":"BearZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "RainZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Rain Country"
+     "name":"RainZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Rain Country"
   },
   "RainZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Rain Country"
+     "name":"RainZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Rain Country"
   },
   "RainZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Rain Country"
+     "name":"RainZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Rain Country"
   },
   "FireZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone06":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone06",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone07":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone07",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "FireZone08":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Fire Country"
+     "name":"FireZone08",
+     "blurb":"",
+     "detail":"",
+     "owner":"Fire Country"
   },
   "TideZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Whirling Tide Country"
+     "name":"TideZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Whirling Tide Country"
   },
   "FlowerZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Flower Country"
+     "name":"FlowerZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Flower Country"
   },
   "TeaZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Tea Country"
+     "name":"TeaZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Tea Country"
   },
   "TeaZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Tea Country"
+     "name":"TeaZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Tea Country"
   },
   "SnowZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Snow Country"
+     "name":"SnowZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Snow Country"
   },
   "SnowZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Snow Country"
+     "name":"SnowZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Snow Country"
   },
   "SnowZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Snow Country"
+     "name":"SnowZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Snow Country"
   },
   "SnowZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Snow Country"
+     "name":"SnowZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Snow Country"
   },
   "SnowZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Snow Country"
+     "name":"SnowZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Snow Country"
   },
   "MoonZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Moon Country"
+     "name":"MoonZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Moon Country"
   },
   "WaterfallZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Waterfall Country"
+     "name":"WaterfallZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "WaterfallZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Waterfall Country"
+     "name":"WaterfallZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "GrassZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Grass Country"
+     "name":"GrassZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Grass Country"
   },
   "EarthZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone06":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone06",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "EarthZone07":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Earth Country"
+     "name":"EarthZone07",
+     "blurb":"",
+     "detail":"",
+     "owner":"Earth Country"
   },
   "ForestZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Forest Country"
+     "name":"ForestZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "ForestZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Forest Country"
+     "name":"ForestZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "ShadowZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Shadow Country"
+     "name":"ShadowZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Shadow Country"
   },
   "SwampZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Swamp Country"
+     "name":"SwampZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "TornadoZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Tornado Country"
+     "name":"TornadoZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Tornado Country"
   },
   "BirdZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Bird Country"
+     "name":"BirdZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "StoneZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Stone Country"
+     "name":"StoneZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":""
   },
   "IronZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Iron Country"
+     "name":"IronZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Iron Country"
   },
   "RiverZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"River Country"
+     "name":"RiverZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"River Country"
   },
   "RiverZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"River Country"
+     "name":"RiverZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"River Country"
   },
   "WindZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone06":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone06",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone07":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone07",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "WindZone08":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
+     "name":"WindZone08",
+     "blurb":"",
+     "detail":"",
+     "owner":"Wind Country"
   },
   "HavenZone01":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone01",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone02":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone02",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone03":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone03",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone04":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone04",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone05":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone05",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone06":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone06",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   },
   "HavenZone07":{
-    "name":"",
-    "blurb":"",
-    "detail":"",
-    "owner":"Haven Country"
+     "name":"HavenZone07",
+     "blurb":"",
+     "detail":"",
+     "owner":"Haven Country"
   }
 }
 
