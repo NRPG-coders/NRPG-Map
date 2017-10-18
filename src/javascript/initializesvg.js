@@ -68,8 +68,8 @@ function triggerExpandedInfo(id) {
 
   geid('longName').innerHTML = details.name
   geid('longOwner').innerHTML = details.owner
-  geid('longZoneLong').innerHTML = details.long
-  geid('longFactionLong').innerHTML = faction ? faction.long : '-'
+  geid('longZoneLong').innerHTML = details.detail
+  geid('longFactionLong').innerHTML = faction ? faction.detail : '-'
 
 }
 //Turns off all information blurb group
