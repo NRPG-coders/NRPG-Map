@@ -54,7 +54,7 @@ loadJS('/src/javascript/define_factions.js','definefactions')
 loadJS('/src/javascript/define_zones.js','definezones')
 loadJS('/src/javascript/initializesvg.js','initializesvg')
 loadJS('/src/javascript/invertcolor.js','invertcolor')
-loadJS('/src/javascript/loadsvg.js','loadsvg')
+//loadJS('/src/javascript/loadsvg.js','loadsvg')
 // Wait for CSS to load
 while (!css.page) {}
 
@@ -85,11 +85,11 @@ let writejs = (name, contents) => { write('js', name, contents) }
 
 write('css', 'main.css', css.page)
 write('gfx', 'map.svg', svg.map)
-write('html', 'page.html', html.page({}))
+write('html', 'page.html', html.page({svg: svg.map}))
 writejs('factions.js', js.definefactions)
 writejs('zones.js', js.definezones)
 writejs('initializesvg.js', js.initializesvg)
 writejs('invertcolor.js', js.invertcolor)
-writejs('loadsvg.js', js.loadsvg)
+//writejs('loadsvg.js', js.loadsvg)
 writejs('svg.js', fs.readFileSync('./node_modules/svg.js/dist/svg.min.js','utf8'))
 writejs('svg-pan-zoom.js', fs.readFileSync('./node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','utf8'))
