@@ -5,8 +5,10 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
-    cp -R dist/. out/
-    find ./out -name '.gitignore' -delete
+    cp -R dist/. out/                           # Copy compiled files to output folder
+    find ./out -name '.gitignore' -delete       # Delete gitignore files
+    find /out -maxdepth 1 -type f -delete #     # Delete files in the root of the out folder
+    cp out/html/page.html out/index.html        # Make output accessible at https://nrpg-coders.github.io/NRPG-Map
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
