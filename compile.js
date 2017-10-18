@@ -7,8 +7,6 @@ const pd = require('pretty-data').pd
 const uglifyjs = require('uglify-js').minify
 const path = require('path')
 
-const port = 3000
-
 //Storage objects for css, js, and svg text
 let css = {}
 let js = {}
