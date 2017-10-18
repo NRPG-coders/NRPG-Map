@@ -23,12 +23,6 @@ var ZoneDetails = {
     "detail":"",
     "owner":"Fang Country"
   },
-  "KiriRuinsZone01":{
-    "name":"KiriRuinsZone01",
-    "blurb":"",
-    "detail":"",
-    "owner":"Kirigakure Ruins"
-  },
   "KiriRuinsZone02":{
     "name":"KiriRuinsZone02",
     "blurb":"",
