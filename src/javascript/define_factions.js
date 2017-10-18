@@ -46,7 +46,7 @@ var Factions = {
   'Island Country': {
     name: 'Island Country',
     capital: '',
-    color: '#c13dff',
+    color: '#185cb7',
     blurb: 'Shortish description here.',
     detail: 'Longish description here.'
   },
