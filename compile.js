@@ -84,20 +84,3 @@ writejs('invertcolor.js', js.invertcolor)
 writejs('loadsvg.js', js.loadsvg)
 writejs('svg.js', fs.readFileSync('./node_modules/svg.js/dist/svg.min.js','utf8'))
 writejs('svg-pan-zoom.js', fs.readFileSync('./node_modules/svg-pan-zoom/dist/svg-pan-zoom.min.js','utf8'))
-
-
-
-
-// Move things to .clone
-;(function(root) {
-  fs.readdirSync(root).forEach( name => {
-    let sub = path.join(root, name)
-    if (fs.statSync(sub).isDirectory()) {
-      fs.readdirSync(sub).forEach( file => {
-        if (file !== '.gitignore') {
-          fs.copySync(path.join(sub, file),path.join('out',name,file))
-        }
-      })
-    }
-  })
-})('./dist')
