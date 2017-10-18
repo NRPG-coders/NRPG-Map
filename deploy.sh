@@ -5,7 +5,7 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
-    cp dist/. out/
+    cp -R dist/. out/
     find ./out -name '.gitignore' -delete
 }
 
