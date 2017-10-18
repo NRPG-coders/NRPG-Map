@@ -20,12 +20,11 @@ var Factions = {
     blurb: 'Shorter description.',
     detail: 'Still short description.'
   },
-
-
   'Claw Country': {
     name: 'Claw Country',
     capital: '',
     color: '#668b67',
+    textOverride: '#ffcc00',
     blurb: 'Shortish description here.',
     detail: 'Longish description here.'
   },
