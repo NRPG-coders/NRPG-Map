@@ -76,6 +76,20 @@ body
   height 25px
 
 
+
+
+.blurbTitle, .longTitle
+  font-weight bolder
+.blurbText, .longText
+  font-weight normal
+.blurbSubtitle, .longSubtitle
+  font-weight bold
+  &::before
+    content "    "
+
+
+
+
 // These are debug divs. That should not render if code is live
 #hover, #click
   color white
