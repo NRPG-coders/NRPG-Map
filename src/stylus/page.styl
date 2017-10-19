@@ -79,13 +79,14 @@ body
 
 
 .blurbTitle, .longTitle
-  font-weight bolder
+  font-weight 900
 .blurbText, .longText
-  font-weight normal
+  font-weight 400
 .blurbSubtitle, .longSubtitle
-  font-weight bold
-  &::before
-    content "    "
+  font-weight 500
+  &:before
+    content "\00a0\00a0\00a0\00a0"
+    white-space pre
 
 
 
