@@ -31,16 +31,16 @@ function triggerInfo(id) {
   let details = info.details
   let faction = Factions[details.owner]
 
-  ;([...document.getElementsByClassName('blurbTitle')]).forEach( el => {
-    el.style.color = info.text
-  })
-  ;([...document.getElementsByClassName('blurbSubtitle')]).forEach( el => {
-    el.style.color = info.text
-  })
-  ;([...document.getElementsByClassName('blurbText')]).forEach( el => {
-    el.style.color = info.bw
-  })
-  geid('blurbContent').style.backgroundColor = info.background
+  // ;([...document.getElementsByClassName('blurbTitle')]).forEach( el => {
+  //   el.style.color = info.text
+  // })
+  // ;([...document.getElementsByClassName('blurbSubtitle')]).forEach( el => {
+  //   el.style.color = info.text
+  // })
+  // ;([...document.getElementsByClassName('blurbText')]).forEach( el => {
+  //   el.style.color = info.bw
+  // })
+  // geid('blurbContent').style.backgroundColor = info.background
 
   geid('blurbName').innerHTML = details.name
   geid('blurbOwner').innerHTML = details.owner
