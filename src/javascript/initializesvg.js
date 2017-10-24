@@ -1,5 +1,10 @@
 let geid = document.getElementById.bind(document)
 
+;(function(context) {
+  let map = document.getElementById('The_Best_Map_Ever')
+  map.style.height = (map.clientWidth)*(2160/3840)+'px'
+})()
+
 
 
 
