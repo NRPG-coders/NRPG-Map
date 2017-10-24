@@ -1,0 +1,1 @@
+"use strict";var Icons=[{x:2475,y:700,width:"50",height:"50",url:"http://vignette3.wikia.nocookie.net/shinobito/images/9/98/Naruto-konoha-symbol-i7.png"}];"undefined"!=typeof window?window.Icons=Icons:module.exports=Icons;
