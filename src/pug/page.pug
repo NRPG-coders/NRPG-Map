@@ -7,12 +7,14 @@ html(lang='en')
     script(type='text/javascript', src=url('/js/svg-pan-zoom.js'))
     script(type='text/javascript', src=url('/js/svg.js'))
     script(type='text/javascript', src=url('/js/factions.js'))
+    script(type='text/javascript', src=url('/js/icons.js'))
     script(type='text/javascript', src=url('/js/zones.js'))
   body
     div#container
       div.bar
       div#map!= svg
       script(type='text/javascript', src=url('/js/initializesvg.js'))
+      script(type='text/javascript', src=url('/js/populateicons.js'))
       div#click
       div#hover
       div#blurb
