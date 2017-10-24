@@ -193,6 +193,7 @@ var Factions = {
     name: 'River Country',
     capital: '',
     color: '#ad75f9',
+    textOverride: '#94f215',
     blurb: 'Shortish description here.',
     detail: 'Longish description here.'
   },
