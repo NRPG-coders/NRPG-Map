@@ -59,6 +59,12 @@ var ZoneDetails = {
     "detail":"",
     "owner":"Lightning Country"
   },
+  "LightningZone03":{
+    "name":"LightningZone03",
+    "blurb":"",
+    "detail":"",
+    "owner":"Lightning Country"
+  },
   "LightningZone04":{
     "name":"LightningZone04",
     "blurb":"",
@@ -67,12 +73,6 @@ var ZoneDetails = {
   },
   "LightningZone05":{
     "name":"LightningZone05",
-    "blurb":"",
-    "detail":"",
-    "owner":"Lightning Country"
-  },
-  "LightningZone06":{
-    "name":"LightningZone06",
     "blurb":"",
     "detail":"",
     "owner":"Lightning Country"
@@ -367,12 +367,6 @@ var ZoneDetails = {
   },
   "WindZone07":{
     "name":"WindZone07",
-    "blurb":"",
-    "detail":"",
-    "owner":"Wind Country"
-  },
-  "WindZone08":{
-    "name":"WindZone08",
     "blurb":"",
     "detail":"",
     "owner":"Wind Country"
