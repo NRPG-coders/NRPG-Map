@@ -16,7 +16,8 @@ let svg = {}
 
 // Generate file paths based on dev/prod
 function url(dir) {
-  return process.argv[2] === 'dev' ? '..'+dir : 'https://nrpg-coders.github.io/NRPG-Map'+dir
+  let t = process.argv[2] === 'dev' ? '..'+dir : 'https://nrpg-coders.github.io/NRPG-Map'+dir
+  return t+"?rnd="(Math.floor(Math.random()*2000000))
 }
 
 //Load HTML into memory as text
