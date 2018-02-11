@@ -42,10 +42,10 @@ var ZoneDetails = {
     "owner":"New Kirigakure"
   },
   "VolcanoZone01":{
-    "name":"Volcano Island",
-    "blurb":"Used to be something",
+    "name":"VolcanoZone01",
+    "blurb":"",
     "detail":"",
-    "owner":"New Kirigakure"
+    "owner":"Volcano Country"
   },
   "LightningZone01":{
     "name":"LightningZone01",
